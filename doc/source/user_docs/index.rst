@@ -18,9 +18,9 @@ project that acts as a *bridge* between OpenStack and Kubernetes' Cluster API
 provides users the ability to create Kubernetes clusters using the OpenStack
 API, bypassing the need to directly interact with Kubernetes or its API.
 
-Therefore, this document aims to provide a comprehensive guide to the Magnum
-Cluster API Helm Driver to aid in understanding its implementation and
-architecture.
+Therefore this document, based on the following `blog post <https://www.stackhpc.com/magnum-cluster-api-helm-deep-dive.html>`_
+, aims to provide a comprehensive guide to the Magnum Cluster API Helm 
+Driver to aid in understanding its implementation and architecture.
 
 .. note::
    The Magnum Cluster API Helm Driver is reliant on the pre-installation of
@@ -35,10 +35,10 @@ Core CAPI Concepts
 As previously defined, Cluster API provides an API for being able to manage
 the various components of a Kubernetes cluster. This conceptually looks like
 a Kubernetes cluster managing other Kubernetes clusters; the former, named the
-'CAPI management cluster', is the one providing the API interface for managing
-the latter clusters.
+'CAPI management cluster', is the one providing the API for managing
+the latter workload clusters.
 
-The CAPI management cluster provides this API interface via a set of custom resource
+The CAPI management cluster provides this API via a set of custom resource
 definitions (`CRDs <https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/>`_).
 These CRDs are groupings of API objects which, in turn, together make up the
 Kubernetes cluster; for example, the ``pods`` resource is an endpoint in the
